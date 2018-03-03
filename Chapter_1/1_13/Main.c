@@ -14,15 +14,12 @@ int main()
 
     // Allocate memory for wordlengths array
     // Exit if memory can't be allocated
-    wordlengths = malloc(sizeof(int) * LARGESTWORD);
+    wordlengths = calloc(LARGESTWORD, sizeof(int));
     if(!wordlengths)
     {
         fprintf(stderr, "Error allocating memory");
         return MEMERR;
     }
-
-    // Initialize values to 0
-    memset(wordlengths, 0, sizeof(int) * LARGESTWORD);
 
     // Count the number of letters in a word
     // Add to the running total
