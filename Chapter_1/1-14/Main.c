@@ -1,9 +1,12 @@
+/* 
+ * Cels to Fahr Conveter 
+ * Joshua Campbell
+ * 03/07/2018
+*/
 
 #include <stdio.h>
-
-#define LOWERLIMIT  0 
-#define UPPERLIMIT  300
-#define STEPSIZE    20
+#include <stdlib.h>
+#include "Globals.h"
 
 float celstofahr(float);
 
@@ -12,14 +15,19 @@ int main()
     float cels, fahr;
 
     printf("Cels Fahr\n");
-    for(cels = UPPERLIMIT; cels >= LOWERLIMIT; cels = cels - STEPSIZE)    
+    for(
+            cels = UPPER_LIMIT;
+            cels >= LOWER_LIMIT;
+            cels = cels - STEP_SIZE
+            )
     {
         fahr = celstofahr(cels);
-        printf("%3.0f %6.1f\n", cels, fahr);
+        printf("%3.0f %6.1f\n", cels, fahr); /* 000c 000000.0f */
     }
 
-    return 0;
+    exit(0);
 }
+/****************************************/
 
 float celstofahr(float cels)
 {
